@@ -24,8 +24,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>854</width>
-        <height>480</height>
+        <width>800</width>
+        <height>600</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -39,7 +39,7 @@
         <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
-        <prop name="Preview browser">(default)</prop>
+        <prop name="Preview browser">Firefox</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
@@ -49,6 +49,9 @@
         </object-type>
         <object-type name="Player" sid="393328498241313">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="389573839148445" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="721850311602668">
                     <behavior id="EightDir" />
@@ -62,7 +65,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="986870541370373" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Kampus PENS\1. Perkuliahan (Akademik)\Semester 2\Workshop Produksi Game 2 (Pak Akbar)\Assets\WarPlane.gif">
+                    <frame duration="1" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="D:\Kampus PENS\1. Perkuliahan (Akademik)\Semester 2\Workshop Produksi Game 2 (Pak Akbar)\Assets\WarPlane.gif">
                         <collision-poly>
                             <point x="0.140625" y="0.28125" />
                             <point x="0.78125" y="0.4375" />
@@ -79,25 +82,6 @@
         <object-type name="TiledBackground" sid="857474085148241">
             <plugin id="TiledBg" />
             <texture original-source="D:\Game Development\Assets\Plane Game 2D\sky_background_temp\farground_mountains.png" />
-        </object-type>
-        <object-type name="Sprite" sid="970519378255725">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="345911663058412" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Game Development\Construct 2\WPG2 Project\Assets\jpwarplen.png">
-                        <collision-poly>
-                            <point x="0.0984849" y="0.203125" />
-                            <point x="0.5" y="0.296875" />
-                            <point x="0.848485" y="0.3125" />
-                            <point x="1" y="0.5" />
-                            <point x="0.848485" y="0.6875" />
-                            <point x="0.5" y="0.828125" />
-                            <point x="0.181818" y="0.625" />
-                            <point x="0.0227273" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families />
