@@ -81,8 +81,8 @@
                     <behavior-instances>
                         <behavior-instance type="8Direction">
                             <properties>
-                                <max-speed>100</max-speed>
-                                <acceleration>75</acceleration>
+                                <max-speed>200</max-speed>
+                                <acceleration>170</acceleration>
                                 <deceleration>20</deceleration>
                                 <directions>8 directions</directions>
                                 <set-angle>360 degree (smooth)</set-angle>
@@ -139,11 +139,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-72.563308716</x>
-                        <y>189.552078247</y>
+                        <x>-84.696784973</x>
+                        <y>185.507583618</y>
                         <z>0.000003815</z>
-                        <width>52</width>
-                        <height>27</height>
+                        <width>35.822029114</width>
+                        <height>18.599901199</height>
                         <depth>0</depth>
                         <hotspotX>0.75</hotspotX>
                         <hotspotY>0.481481493</hotspotY>
