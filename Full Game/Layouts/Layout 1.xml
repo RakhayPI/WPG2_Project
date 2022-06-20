@@ -104,14 +104,49 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>93.441543579</x>
-                        <y>234.22076416</y>
+                        <x>115.457290649</x>
+                        <y>241.388092041</y>
                         <z>0</z>
                         <width>91.651512146</width>
                         <height>45.825756073</height>
                         <depth>0</depth>
-                        <hotspotX>1.#QNAN</hotspotX>
-                        <hotspotY>1.#QNAN</hotspotY>
+                        <hotspotX>0.5546875</hotspotX>
+                        <hotspotY>0.550000012</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Bullet" uid="3">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>0</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="DestroyOutsideLayout" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-72.563308716</x>
+                        <y>189.552078247</y>
+                        <z>0.000003815</z>
+                        <width>52</width>
+                        <height>27</height>
+                        <depth>0</depth>
+                        <hotspotX>0.75</hotspotX>
+                        <hotspotY>0.481481493</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

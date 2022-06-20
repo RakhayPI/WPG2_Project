@@ -15,8 +15,10 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
@@ -65,7 +67,8 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="986870541370373" speed="5">
-                    <frame duration="1" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="D:\Kampus PENS\1. Perkuliahan (Akademik)\Semester 2\Workshop Produksi Game 2 (Pak Akbar)\Assets\WarPlane.gif">
+                    <frame duration="1" hotspotX="0.554688" hotspotY="0.55" original-source="D:\Kampus PENS\1. Perkuliahan (Akademik)\Semester 2\Workshop Produksi Game 2 (Pak Akbar)\Assets\WarPlane.gif">
+                        <image-point name="Gun" x="0.759375" y="0.6625" />
                         <collision-poly>
                             <point x="0.140625" y="0.28125" />
                             <point x="0.78125" y="0.4375" />
@@ -82,6 +85,31 @@
         <object-type name="TiledBackground" sid="857474085148241">
             <plugin id="TiledBg" />
             <texture original-source="D:\Game Development\Assets\Plane Game 2D\sky_background_temp\farground_mountains.png" />
+        </object-type>
+        <object-type name="Bullet" sid="350301274924893">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="877401861063553">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="535591776126626">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="585673618737377" speed="5">
+                    <frame duration="1" hotspotX="0.75" hotspotY="0.481481" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\temp\bullet.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.407407" />
+                            <point x="0.826923" y="0.333333" />
+                            <point x="0.923077" y="0.481481" />
+                            <point x="0.826923" y="0.666667" />
+                            <point x="0.5" y="0.555556" />
+                            <point x="0.461538" y="0.481481" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

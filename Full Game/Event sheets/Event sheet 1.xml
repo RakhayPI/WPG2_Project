@@ -4,8 +4,27 @@
     <name>Event sheet 1</name>
     <events>
         <event-block sid="430279190146095">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="550774771578267" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="767157760696850" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="510861025754280" type="Player">
+                    <param id="0" name="Object">Bullet</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="936720711650749" type="Bullet">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="146884351705596" type="Bullet">
+                    <param id="0" name="Speed">200+Player.8direction.speed</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
