@@ -17,8 +17,6 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Car" version="1">Car</behavior>
-        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
@@ -57,9 +55,6 @@
                 <instance-variable name="Health" sid="389573839148445" type="number" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="8Direction" sid="721850311602668">
-                    <behavior id="EightDir" />
-                </behavior-type>
                 <behavior-type name="ScrollTo" sid="491093231154496">
                     <behavior id="scrollto" />
                 </behavior-type>
@@ -68,6 +63,9 @@
                 </behavior-type>
                 <behavior-type name="Car" sid="738347450863712">
                     <behavior id="Car" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="364140616790862">
+                    <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -96,9 +94,6 @@
                 <behavior-type name="DestroyOutsideLayout" sid="535591776126626">
                     <behavior id="destroy" />
                 </behavior-type>
-                <behavior-type name="Physics" sid="247804592035911">
-                    <behavior id="Physics" />
-                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="585673618737377" speed="5">
@@ -115,11 +110,6 @@
             <instance-variables>
                 <instance-variable name="Health" sid="548607314052042" type="number" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Physics" sid="378543411647014">
-                    <behavior id="Physics" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="128485235689479" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\jpwarplen.png">

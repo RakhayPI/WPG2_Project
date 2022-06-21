@@ -7,13 +7,14 @@
             <sub-events>
                 <event-block sid="450080728545483">
                     <conditions>
+                        <condition id="11" name="Collisions enabled" sid="717367005545494" type="Player" />
                         <condition id="2" name="Key is down" sid="310612703059662" type="Keyboard">
                             <param id="0" name="Key">38</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-8" name="Set angle" sid="173320697558434" type="Player">
-                            <param id="0" name="Angle">self.Angle + self.8Direction.MaxSpeed*dt*0.6</param>
+                            <param id="0" name="Angle">self.Angle + self.Car.MaxSpeed*dt*0.6</param>
                         </action>
                     </actions>
                 </event-block>
@@ -25,7 +26,7 @@
                     </conditions>
                     <actions>
                         <action id="-8" name="Set angle" sid="593893365543182" type="Player">
-                            <param id="0" name="Angle">self.Angle - self.8Direction.MaxSpeed*dt*0.6</param>
+                            <param id="0" name="Angle">self.Angle - self.Car.MaxSpeed*dt*0.6</param>
                         </action>
                     </actions>
                 </event-block>
@@ -84,6 +85,7 @@
                 <condition id="0" name="On collision with another object" sid="887303345206260" type="Bullet">
                     <param id="0" name="Object">EnemyPlane</param>
                 </condition>
+                <condition id="11" name="Collisions enabled" sid="561356098923986" type="EnemyPlane" />
             </conditions>
             <actions>
                 <action id="0" name="Spawn another object" sid="966860921985591" type="Bullet">
@@ -109,6 +111,12 @@
                     <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="691713098160466" type="EnemyPlane" />
+            </actions>
+        </event-block>
+        <event-block sid="904535756583160">
+            <conditions />
             <actions />
         </event-block>
     </events>
