@@ -16,7 +16,9 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Car" version="1">Car</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
@@ -26,8 +28,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>800</width>
-        <height>600</height>
+        <width>900</width>
+        <height>400</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -64,6 +66,9 @@
                 <behavior-type name="BoundToLayout" sid="235230944021449">
                     <behavior id="bound" />
                 </behavior-type>
+                <behavior-type name="Car" sid="738347450863712">
+                    <behavior id="Car" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="986870541370373" speed="5">
@@ -82,10 +87,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TiledBackground" sid="857474085148241">
-            <plugin id="TiledBg" />
-            <texture original-source="D:\Game Development\Assets\Plane Game 2D\sky_background_temp\farground_mountains.png" />
-        </object-type>
         <object-type name="Bullet" sid="350301274924893">
             <plugin id="Sprite" />
             <behaviors>
@@ -95,19 +96,74 @@
                 <behavior-type name="DestroyOutsideLayout" sid="535591776126626">
                     <behavior id="destroy" />
                 </behavior-type>
+                <behavior-type name="Physics" sid="247804592035911">
+                    <behavior id="Physics" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="585673618737377" speed="5">
-                    <frame duration="1" hotspotX="0.75" hotspotY="0.481481" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\temp\bullet.png">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.6" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\temp\bullet.jpeg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Background" sid="289460633523159">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\background\174548443-fbbd504e-90c0-42de-b7c0-77097020f14c.png" />
+        </object-type>
+        <object-type name="EnemyPlane" sid="469125003790303">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="548607314052042" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics" sid="378543411647014">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="128485235689479" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\jpwarplen.png">
                         <collision-poly>
-                            <point x="0.5" y="0.407407" />
-                            <point x="0.826923" y="0.333333" />
-                            <point x="0.923077" y="0.481481" />
-                            <point x="0.826923" y="0.666667" />
-                            <point x="0.5" y="0.555556" />
-                            <point x="0.461538" y="0.481481" />
+                            <point x="0.318797" y="0.309375" />
+                            <point x="0.667188" y="0.18125" />
+                            <point x="0.946922" y="0.3125" />
+                            <point x="0.946922" y="0.696875" />
+                            <point x="0.635937" y="0.8375" />
+                            <point x="0.483878" y="0.704687" />
+                            <point x="0.0115057" y="0.55" />
+                            <point x="0.139915" y="0.034375" />
                         </collision-poly>
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Spark" sid="322609586168899">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="929405040945730" speed="5">
+                    <frame duration="1" hotspotX="0.25" hotspotY="0.515625" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\Sprite-0009\Sprite-0007.png">
+                        <collision-poly>
+                            <point x="0.34375" y="0.34375" />
+                            <point x="0.5" y="0.28125" />
+                            <point x="0.578125" y="0.421875" />
+                            <point x="0.703125" y="0.5" />
+                            <point x="0.5625" y="0.5625" />
+                            <point x="0.5" y="0.703125" />
+                            <point x="0.34375" y="0.65625" />
+                            <point x="0.234375" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EnemySpawner" sid="876993797828281">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Type" sid="632591529213840" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="410631997709065" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.513514" original-source="D:\Game Development\Construct 2\Example\Animations\EnemySpawner\Default\000.png" />
                 </animation>
             </animation-folder>
         </object-type>

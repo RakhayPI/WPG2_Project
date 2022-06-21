@@ -3,28 +3,113 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
-        <event-block sid="430279190146095">
+        <event-group description="Memberi pemain kemampuan untuk bergerak dan menembak." sid="751216485171426" title="Player Controls">
+            <sub-events>
+                <event-block sid="450080728545483">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="310612703059662" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="173320697558434" type="Player">
+                            <param id="0" name="Angle">self.Angle + self.8Direction.MaxSpeed*dt*0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="328512033679896">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="570269333886258" type="Keyboard">
+                            <param id="0" name="Key">40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="593893365543182" type="Player">
+                            <param id="0" name="Angle">self.Angle - self.8Direction.MaxSpeed*dt*0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="138610620760958">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="260329262897133" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="120163164431228" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="405952061522222">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="260049289011002" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Car" id="7" name="Simulate control" sid="324039813236075" type="Player">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="430279190146095">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="550774771578267" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="767157760696850" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="510861025754280" type="Player">
+                            <param id="0" name="Object">Bullet</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="936720711650749" type="Bullet">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="146884351705596" type="Bullet">
+                            <param id="0" name="Speed">750+Player.Car.speed</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="125363568382507" title="Enemy" />
+        <event-block sid="152209982045719">
             <conditions>
-                <condition id="-6" name="Every X seconds" sid="550774771578267" type="System">
-                    <param id="0" name="Interval (seconds)">0.1</param>
-                </condition>
-                <condition id="2" name="Key is down" sid="767157760696850" type="Keyboard">
-                    <param id="0" name="Key">32</param>
+                <condition id="0" name="On collision with another object" sid="887303345206260" type="Bullet">
+                    <param id="0" name="Object">EnemyPlane</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Spawn another object" sid="510861025754280" type="Player">
-                    <param id="0" name="Object">Bullet</param>
+                <action id="0" name="Spawn another object" sid="966860921985591" type="Bullet">
+                    <param id="0" name="Object">Spark</param>
                     <param id="1" name="Layer">1</param>
-                    <param id="2" name="Image point">1</param>
+                    <param id="2" name="Image point">0</param>
                 </action>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="936720711650749" type="Bullet">
-                    <param id="0" name="State">1</param>
+                <action id="-8" name="Set angle" sid="803621453887601" type="Spark">
+                    <param id="0" name="Angle">random(360)</param>
                 </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="146884351705596" type="Bullet">
-                    <param id="0" name="Speed">200+Player.8direction.speed</param>
+                <action id="-9" name="Destroy" sid="405164636952728" type="Spark" />
+                <action id="-12" name="Subtract from" sid="636807887467909" type="EnemyPlane">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="547155501650331">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="489005755498194" type="EnemyPlane">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

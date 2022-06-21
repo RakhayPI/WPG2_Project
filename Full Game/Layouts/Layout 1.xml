@@ -4,8 +4,8 @@
     <sid>8873350371196689</sid>
     <event-sheet>Event sheet 1</event-sheet>
     <size>
-        <width>3840</width>
-        <height>2160</height>
+        <width>10000</width>
+        <height>610</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -29,7 +29,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TiledBackground" uid="2">
+                <instance type="Background" uid="2">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -37,11 +37,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1</x>
-                        <y>172</y>
+                        <x>0</x>
+                        <y>-2</y>
                         <z>0</z>
-                        <width>1705</width>
-                        <height>306</height>
+                        <width>10003</width>
+                        <height>609</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -81,12 +81,12 @@
                     <behavior-instances>
                         <behavior-instance type="8Direction">
                             <properties>
-                                <max-speed>200</max-speed>
+                                <max-speed>300</max-speed>
                                 <acceleration>170</acceleration>
-                                <deceleration>20</deceleration>
+                                <deceleration>50</deceleration>
                                 <directions>8 directions</directions>
                                 <set-angle>360 degree (smooth)</set-angle>
-                                <default-controls>Yes</default-controls>
+                                <default-controls>No</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -100,15 +100,28 @@
                                 <bound-by>Origin</bound-by>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Car">
+                            <properties>
+                                <max-speed>500</max-speed>
+                                <acceleration>170</acceleration>
+                                <deceleration>50</deceleration>
+                                <steer-speed>60</steer-speed>
+                                <drift-recover>185</drift-recover>
+                                <friction>0.1</friction>
+                                <set-angle>Yes</set-angle>
+                                <default-controls>No</default-controls>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>115.457290649</x>
-                        <y>241.388092041</y>
+                        <x>121.010269165</x>
+                        <y>244.14112854</y>
                         <z>0</z>
-                        <width>91.651512146</width>
-                        <height>45.825756073</height>
+                        <width>101.662521362</width>
+                        <height>50.831260681</height>
                         <depth>0</depth>
                         <hotspotX>0.5546875</hotspotX>
                         <hotspotY>0.550000012</hotspotY>
@@ -135,6 +148,20 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="DestroyOutsideLayout" />
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>Yes</prevent-rotation>
+                                <density>1</density>
+                                <friction>0</friction>
+                                <elasticity>0</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0</angular-damping>
+                                <bullet>Yes</bullet>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -142,11 +169,99 @@
                         <x>-84.696784973</x>
                         <y>185.507583618</y>
                         <z>0.000003815</z>
-                        <width>35.822029114</width>
-                        <height>18.599901199</height>
+                        <width>17.222129822</width>
+                        <height>3.44442606</height>
                         <depth>0</depth>
-                        <hotspotX>0.75</hotspotX>
-                        <hotspotY>0.481481493</hotspotY>
+                        <hotspotX>0.519999981</hotspotX>
+                        <hotspotY>0.600000024</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="EnemyPlane" uid="4">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Health>100</Health>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>Yes</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>248.777618408</x>
+                        <y>240.932617188</y>
+                        <z>0</z>
+                        <width>79.880973816</width>
+                        <height>38.781776428</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Spark" uid="5">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>1</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-41.939559937</x>
+                        <y>136.98336792</y>
+                        <z>0</z>
+                        <width>17.331415176</width>
+                        <height>17.331415176</height>
+                        <depth>0</depth>
+                        <hotspotX>0.25</hotspotX>
+                        <hotspotY>0.515625</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="EnemySpawner" uid="6">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <Type>EnemyPlane</Type>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-78.470252991</x>
+                        <y>385.302154541</y>
+                        <z>0</z>
+                        <width>12.914712906</width>
+                        <height>13.273454666</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.513513505</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
