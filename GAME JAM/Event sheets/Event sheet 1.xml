@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="499878759159855">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="852663258873493" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="607855262457811" type="Player">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="495700235277406">
+            <conditions>
+                <condition id="0" name="On click" sid="977245991960784" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="817057956498790" type="Player">
+                    <param id="0" name="Object">Playertemp</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="723315006758920">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="803828347560747" type="System" />
+            </conditions>
+            <actions>
+                <action id="8" name="Set flipped" sid="558076746388137" type="Enemy">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="675729295281134" type="Enemy">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="289827880369801">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="224670294501368" type="Player">
+                    <param id="0" name="Instance variable">IsLife</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="678760372359656" type="Enemy">
+                    <param id="0" name="Object">Enemytemp</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="158554245746208">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="206352848130897" type="Player">
+                    <param id="0" name="Object">Enemytemp</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="261178287298066" type="Player" />
+                <action id="-9" name="Destroy" sid="139947572529828" type="Enemytemp" />
+            </actions>
+        </event-block>
+        <event-block sid="520479890167040">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="380490506762742" type="Enemy">
+                    <param id="0" name="Object">Playertemp</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="430442758005602" type="Enemy" />
+                <action id="-9" name="Destroy" sid="951014474748298" type="Playertemp" />
+            </actions>
+        </event-block>
+        <event-block sid="765194106473898">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="791889490716020" type="Playertemp">
+                    <param id="0" name="Object">Enemytemp</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="402202501234152" type="Playertemp" />
+                <action id="-9" name="Destroy" sid="782698314140860" type="Enemytemp" />
+            </actions>
+        </event-block>
+        <event-block sid="929277433627549">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="461359291310782" type="Enemy" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="939184613809488" type="Enemy" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
