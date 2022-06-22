@@ -110,18 +110,27 @@
             <instance-variables>
                 <instance-variable name="Health" sid="548607314052042" type="number" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Car" sid="151324507062399">
+                    <behavior id="Car" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="615025879344429">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="128485235689479" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\jpwarplen.png">
+                        <image-point name="Imagepoint 1" x="0.175" y="0.58125" />
                         <collision-poly>
-                            <point x="0.318797" y="0.309375" />
-                            <point x="0.667188" y="0.18125" />
-                            <point x="0.946922" y="0.3125" />
-                            <point x="0.946922" y="0.696875" />
-                            <point x="0.635937" y="0.8375" />
-                            <point x="0.483878" y="0.704687" />
-                            <point x="0.0115057" y="0.55" />
-                            <point x="0.139915" y="0.034375" />
+                            <point x="0.860085" y="0.034375" />
+                            <point x="0.988494" y="0.55" />
+                            <point x="0.516122" y="0.704687" />
+                            <point x="0.364063" y="0.8375" />
+                            <point x="0.053078" y="0.696875" />
+                            <point x="0.053078" y="0.3125" />
+                            <point x="0.332812" y="0.18125" />
+                            <point x="0.681203" y="0.309375" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -154,6 +163,22 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="410631997709065" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.513514" original-source="D:\Game Development\Construct 2\Example\Animations\EnemySpawner\Default\000.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BulletEnemy" sid="558983105168023">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="771259934639420">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="551761234978033">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="755000056647688" speed="5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.6" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\temp\bullet.jpeg" />
                 </animation>
             </animation-folder>
         </object-type>

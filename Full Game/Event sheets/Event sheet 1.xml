@@ -79,45 +79,122 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="125363568382507" title="Enemy" />
-        <event-block sid="152209982045719">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="887303345206260" type="Bullet">
-                    <param id="0" name="Object">EnemyPlane</param>
-                </condition>
-                <condition id="11" name="Collisions enabled" sid="561356098923986" type="EnemyPlane" />
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="966860921985591" type="Bullet">
-                    <param id="0" name="Object">Spark</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-                <action id="-8" name="Set angle" sid="803621453887601" type="Spark">
-                    <param id="0" name="Angle">random(360)</param>
-                </action>
-                <action id="-9" name="Destroy" sid="405164636952728" type="Spark" />
-                <action id="-12" name="Subtract from" sid="636807887467909" type="EnemyPlane">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="547155501650331">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="489005755498194" type="EnemyPlane">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="691713098160466" type="EnemyPlane" />
-            </actions>
-        </event-block>
-        <event-block sid="904535756583160">
-            <conditions />
-            <actions />
-        </event-block>
+        <event-group description="" sid="125363568382507" title="Enemy">
+            <sub-events>
+                <event-block sid="725940304019408">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="277389929480583" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set flipped" sid="888440959054981" type="EnemyPlane">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="152209982045719">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="887303345206260" type="Bullet">
+                            <param id="0" name="Object">EnemyPlane</param>
+                        </condition>
+                        <condition id="11" name="Collisions enabled" sid="561356098923986" type="EnemyPlane" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="966860921985591" type="EnemyPlane">
+                            <param id="0" name="Object">Spark</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="196965033285893" type="Bullet" />
+                        <action id="-8" name="Set angle" sid="803621453887601" type="Spark">
+                            <param id="0" name="Angle">random(360)</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="405164636952728" type="Spark" />
+                        <action id="-12" name="Subtract from" sid="636807887467909" type="EnemyPlane">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="475614353241230">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="622986820198078" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="683777098220210" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="508236445589968" type="EnemyPlane">
+                            <param id="0" name="Object">BulletEnemy</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="115635711110259" type="BulletEnemy">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="940564249465775" type="BulletEnemy">
+                            <param id="0" name="Speed">750+EnemyPlane.Car.speed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="547155501650331">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="489005755498194" type="EnemyPlane">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="691713098160466" type="EnemyPlane" />
+                    </actions>
+                </event-block>
+                <event-block sid="724592126620924">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="519012143975834" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="662408798663743" type="EnemyPlane">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="894233514312406" title="Player Plane">
+            <sub-events>
+                <event-block sid="493384894008641">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="745701834759258" type="BulletEnemy">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="11" name="Collisions enabled" sid="380134955020022" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="546555314710172" type="BulletEnemy" />
+                        <action id="-12" name="Subtract from" sid="142607171999235" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="607160975034319">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="418544060216600" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="241038522614197" type="Player" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
