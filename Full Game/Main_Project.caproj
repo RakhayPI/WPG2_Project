@@ -72,6 +72,7 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="986870541370373" speed="5">
                     <frame duration="1" hotspotX="0.554688" hotspotY="0.55" original-source="D:\Kampus PENS\1. Perkuliahan (Akademik)\Semester 2\Workshop Produksi Game 2 (Pak Akbar)\Assets\WarPlane.gif">
                         <image-point name="Gun" x="0.759375" y="0.6625" />
+                        <image-point name="Imagepoint 1" x="0.379687" y="0.540625" />
                         <collision-poly>
                             <point x="0.140625" y="0.28125" />
                             <point x="0.78125" y="0.4375" />
@@ -179,6 +180,44 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="755000056647688" speed="5">
                     <frame duration="1" hotspotX="0.52" hotspotY="0.6" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\temp\bullet.jpeg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Explosion1" sid="523674687228874">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="819654145851691" speed="5">
+                    <frame duration="1" hotspotX="0.496875" hotspotY="0.525" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\explosion5\explosion2.png">
+                        <collision-poly>
+                            <point x="0.33125" y="0.33125" />
+                            <point x="0.5" y="0.26875" />
+                            <point x="0.66875" y="0.33125" />
+                            <point x="0.775" y="0.5" />
+                            <point x="0.70625" y="0.70625" />
+                            <point x="0.5" y="0.8" />
+                            <point x="0.29375" y="0.70625" />
+                            <point x="0.2125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Explosion2" sid="620637179347525">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="659731851810858" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\PREDATOR\Documents\GitHub\WPG2_Project\Assets\explosion5\explosion3.png">
+                        <collision-poly>
+                            <point x="0.125" y="0.125" />
+                            <point x="0.5" y="0.25" />
+                            <point x="0.90625" y="0.09375" />
+                            <point x="0.78125" y="0.5" />
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.5" y="0.78125" />
+                            <point x="0.125" y="0.875" />
+                            <point x="0.21875" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>

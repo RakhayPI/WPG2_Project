@@ -695,6 +695,50 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Explosion1" uid="16">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-97.075195313</x>
+                        <y>63.08744812</y>
+                        <z>0</z>
+                        <width>71.155509949</width>
+                        <height>71.155509949</height>
+                        <depth>0</depth>
+                        <hotspotX>0.496874988</hotspotX>
+                        <hotspotY>0.524999976</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Explosion2" uid="17">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-85.165008545</x>
+                        <y>-21.171878815</y>
+                        <z>0</z>
+                        <width>65.090751648</width>
+                        <height>65.090751648</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>

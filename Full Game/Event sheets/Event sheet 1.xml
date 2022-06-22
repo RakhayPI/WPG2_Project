@@ -108,11 +108,14 @@
                         <action id="-8" name="Set angle" sid="803621453887601" type="Spark">
                             <param id="0" name="Angle">random(360)</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="405164636952728" type="Spark" />
                         <action id="-12" name="Subtract from" sid="636807887467909" type="EnemyPlane">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-16" name="Wait" sid="960709668929005" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="349202052437337" type="Spark" />
                     </actions>
                 </event-block>
                 <event-block sid="475614353241230">
@@ -149,7 +152,25 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Spawn another object" sid="880233858004909" type="EnemyPlane">
+                            <param id="0" name="Object">Explosion1</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="691713098160466" type="EnemyPlane" />
+                        <action id="-16" name="Wait" sid="356699367654625" type="System">
+                            <param id="0" name="Seconds">0.25</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="599880800196125" type="Explosion1">
+                            <param id="0" name="Object">Explosion2</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="704098444736121" type="Explosion1" />
+                        <action id="-16" name="Wait" sid="704223592689189" type="System">
+                            <param id="0" name="Seconds">0.25</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="447490370628961" type="Explosion2" />
                     </actions>
                 </event-block>
                 <event-block sid="724592126620924">
@@ -180,6 +201,15 @@
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="0" name="Spawn another object" sid="550692005803866" type="Player">
+                            <param id="0" name="Object">Spark</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="427335666035882" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="207788207802456" type="Spark" />
                     </actions>
                 </event-block>
                 <event-block sid="607160975034319">
@@ -191,7 +221,25 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Spawn another object" sid="582218442709990" type="Player">
+                            <param id="0" name="Object">Explosion1</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="241038522614197" type="Player" />
+                        <action id="-16" name="Wait" sid="980150392492882" type="System">
+                            <param id="0" name="Seconds">0.25</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="671093468096629" type="Explosion1">
+                            <param id="0" name="Object">Explosion2</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="737533044478347" type="Explosion1" />
+                        <action id="-16" name="Wait" sid="902958002194112" type="System">
+                            <param id="0" name="Seconds">0.25</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="483158169276471" type="Explosion2" />
                     </actions>
                 </event-block>
             </sub-events>
